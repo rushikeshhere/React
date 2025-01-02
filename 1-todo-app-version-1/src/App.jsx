@@ -1,50 +1,21 @@
+import AddTodo from "./Components/AddTodo";
+import AppName from "./Components/AppName";
+import TodoItem1 from "./Components/TodoItem1";
+
 function App() {
   return (
     <center>
-      <h1>Todo App</h1>
-      <div class="row">
-        <div class="col-5">
-          <input type="text" placeholder="Enter your Task" />
-        </div>
-        <div class="col">
-          <input type="date" />
-        </div>
-        <div class="col">
-          <button type="button" class="btn btn-success">
-            Add
-          </button>
-        </div>
-      </div>
+      <AppName />
       <br />
-      <div class="row">
-        <div class="col-5">Milk</div>
-        <div class="col">10-10-2022</div>
-        <div class="col">
-          <button type="button" class="btn btn-outline-danger">
-            Remove
-          </button>
-        </div>
-      </div>
+      <AddTodo />
       <br />
-      <div class="row">
-        <div class="col-5">Bread</div>
-        <div class="col">15-10-2022</div>
-        <div class="col">
-          <button type="button" class="btn btn-outline-danger">
-            Remove
-          </button>
-        </div>
-      </div>
+      <TodoItem1 items={"Milk"} date={"2022-01-01"} />
       <br />
-      <div class="row">
-        <div class="col-5">Vegitables</div>
-        <div class="col">17-10-2022</div>
-        <div class="col">
-          <button type="button" class="btn btn-outline-danger">
-            Remove
-          </button>
-        </div>
-      </div>
+      <TodoItem1 items={"Go to nanded"} date={"2025-01-02"} />
+      <br />
+      <TodoItem1 items={"Birth certificate work "} date={"2025-01-02  "} />
+
+      <br />
     </center>
   );
 }
