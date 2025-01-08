@@ -1,0 +1,9 @@
+.display{
+  width: 200px;
+  margin: 25px;
+  font-size:25px;
+  border-color: cornflowerblue;
+  border-radius: 5px;
+  text-align: right;
+  
+}
