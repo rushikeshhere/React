@@ -1,0 +1,17 @@
+.buttons{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.button{
+ width:45px;
+ height: 40px;
+ margin: 10px;
+ border: none;
+ border-radius: 5px;
+ background-color: rgb(230, 201, 163);
+ font-family: 'Times New Roman', Times, serif;
+ font-weight: 250;
+}
