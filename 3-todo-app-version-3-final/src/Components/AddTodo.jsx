@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { IoAddCircleSharp } from "react-icons/io5";
 function AddTodo({ addTodoItems }) {
   const [itemName, setItemName] = useState("");
   const [itemDueDate, setItemDueDate] = useState("");
@@ -28,7 +28,7 @@ function AddTodo({ addTodoItems }) {
       </div>
       <div className="col">
         <button type="button" className="btn btn-success" onClick={handleTodo}>
-          Add
+          <IoAddCircleSharp />
         </button>
       </div>
     </div>
