@@ -15,13 +15,18 @@ function App() {
     setTodoItems((prev) => [...prev, { name: itemName, dueDate: itemDueDate }]);
   };
 
+  const handleDeleteTodo = (todoName) => {
+    const newTodoItem = todoItems.filter((item) => item.name !== todoName);
+    setTodoItems(newTodoItem);
+  };
+
   return (
     <center>
       <AppName />
       <br />
       <AddTodo addTodoItems={handleAddTodo} />
       <br />
-      <TodoItem todoItem={todoItems} />
+      <TodoItem todoItem={todoItems} handleDeleteTodo={handleDeleteTodo} />
       <br />
     </center>
   );
