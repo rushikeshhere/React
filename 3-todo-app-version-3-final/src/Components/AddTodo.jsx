@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { IoAddCircleSharp } from "react-icons/io5";
 function AddTodo({ addTodoItems }) {
-  const [itemName, setItemName] = useState("");
-  const [itemDueDate, setItemDueDate] = useState("");
+  const todoNameElement = useRef();
+  const todoDueDateElement = useRef();
 
   const handleTodo = () => {
+    const itemName = todoNameElement.current.value;
+    const itemDueDate = todoDueDateElement.current.value;
+    todoNameElement.current.value = "";
+    todoDueDateElement.current.value = "";
     addTodoItems(itemName, itemDueDate);
-    setItemDueDate("");
-    setItemName("");
   };
 
   return (
@@ -16,15 +18,11 @@ function AddTodo({ addTodoItems }) {
         <input
           type="text"
           placeholder="Enter your Task"
-          onChange={(e) => setItemName(e.target.value)}
+          ref={todoNameElement}
         />
       </div>
       <div className="col">
-        <input
-          type="date"
-          value={itemDueDate}
-          onChange={(e) => setItemDueDate(e.target.value)}
-        />
+        <input type="date" ref={todoDueDateElement} />
       </div>
       <div className="col">
         <button type="button" className="btn btn-success" onClick={handleTodo}>
