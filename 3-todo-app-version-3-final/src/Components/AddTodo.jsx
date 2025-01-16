@@ -1,6 +1,8 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { IoAddCircleSharp } from "react-icons/io5";
-function AddTodo({ addTodoItems }) {
+import { TodoItemContext } from "../Store/TodoItem-Context";
+function AddTodo() {
+  const { addNewTodo } = useContext(TodoItemContext);
   const todoNameElement = useRef();
   const todoDueDateElement = useRef();
 
@@ -9,7 +11,7 @@ function AddTodo({ addTodoItems }) {
     const itemDueDate = todoDueDateElement.current.value;
     todoNameElement.current.value = "";
     todoDueDateElement.current.value = "";
-    addTodoItems(itemName, itemDueDate);
+    addNewTodo(itemName, itemDueDate);
   };
 
   return (
