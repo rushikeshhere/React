@@ -1,5 +1,8 @@
+import { useContext } from "react";
 import style from "./TodoItemsContainer.module.css";
-function TodoItem1({ todoName, date, handleDeleteTodo }) {
+import { TodoItemContext } from "../Store/TodoItem-Context";
+function TodoItem1({ todoName, date }) {
+  const { deleteTodo } = useContext(TodoItemContext);
   return (
     <div className="row">
       <div className="col-5">{todoName}</div>
@@ -8,7 +11,7 @@ function TodoItem1({ todoName, date, handleDeleteTodo }) {
         <button
           type="button"
           className="btn btn-outline-danger"
-          onClick={() => handleDeleteTodo(todoName)}
+          onClick={() => deleteTodo(todoName)}
         >
           Remove
         </button>
