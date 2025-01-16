@@ -3,6 +3,7 @@ import AppName from "./Components/AppName";
 import TodoItem from "./Components/TodoItem";
 import WelcomeMessage from "./Components/WelcomeMessage";
 import { useState } from "react";
+import { TodoItemContext } from "./Store/TodoItem-Context";
 
 function App() {
   // let todoItems = [
@@ -12,25 +13,27 @@ function App() {
   // ];
   const [todoItems, setTodoItems] = useState([]);
 
-  const handleAddTodo = (itemName, itemDueDate) => {
+  const addNewTodo = (itemName, itemDueDate) => {
     setTodoItems((prev) => [...prev, { name: itemName, dueDate: itemDueDate }]);
   };
 
-  const handleDeleteTodo = (todoName) => {
+  const deleteTodo = (todoName) => {
     const newTodoItem = todoItems.filter((item) => item.name !== todoName);
     setTodoItems(newTodoItem);
   };
 
   return (
-    <center>
-      <AppName />
-      <br />
-      <AddTodo addTodoItems={handleAddTodo} />
-      <br />
-      <WelcomeMessage todoItem={todoItems}></WelcomeMessage>
-      <TodoItem todoItem={todoItems} handleDeleteTodo={handleDeleteTodo} />
-      <br />
-    </center>
+    <TodoItemContext.Provider value={{ todoItems, addNewTodo, deleteTodo }}>
+      <center>
+        <AppName />
+        <br />
+        <AddTodo />
+        <br />
+        <WelcomeMessage></WelcomeMessage>
+        <TodoItem />
+        <br />
+      </center>
+    </TodoItemContext.Provider>
   );
 }
 
