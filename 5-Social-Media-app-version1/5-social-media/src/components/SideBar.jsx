@@ -15,7 +15,7 @@ const SideBar = ({ selectedTab, setSelectedTab }) => {
           <span className="fs-4">Sidebar</span>
         </a>
         <hr />
-        <ul className="nav nav-pills flex-column mb-auto">
+        <ul className="nav nav-pills flex-column mb-auto setPointer">
           <li className="nav-item" onClick={() => setSelectedTab("Home")}>
             <a
               xlinkHref="#"
