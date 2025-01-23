@@ -7,6 +7,10 @@
 .sidebar{
   height:564px;
   width: 80px;
+  
+}
+.setPointer{
+  cursor: pointer;
 }
 .post{
   margin:25px 50px;
