@@ -1,0 +1,31 @@
+.reset-button:hover{
+  background-color: rgb(52, 158, 28);
+}
+.custom-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s ease;
+  border-radius: 20px;
+}
+.increment-button {
+  background-color: #007BFF;
+}
+.increment-button:hover {
+  background-color: #0056b3;
+}
+.decrement-button {
+  background-color: #FF5733;
+}
+.decrement-button:hover {
+  background-color: #b32d00;
+}
+
+.reset-button {
+  background-color: #FFC107;
+}
+.reset-button :hover {
+  background-color: #d39e00;
+}
